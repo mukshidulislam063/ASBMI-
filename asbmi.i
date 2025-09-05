@@ -1,88 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASBMI Online Services</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .hero {
-      background: #3498db;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      border-radius: 8px;
-    }
-    .hero h2 {
-      margin: 0 0 1rem;
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      background: #ecf0f1;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-left: 5px solid #2980b9;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Restaurant</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>ASBMI</h1>
-    <div>
-      <p>Call: 9954350766</p>
-      <p>Email: mukshidulislam063@gmail.com</p>
-    </div>
-  </header>  <section class="hero">
-    <h2>Welcome to ASBMI Online Services</h2>
-    <p>Your trusted source for digital solutions and services.</p>
-  </section>  <section class="about">
-    <h3>About Us</h3>
-    <p>ASBMI is an online service company founded by Mukshidul Islam. We aim to provide quality digital services and support to clients across India.</p>
-  </section>  <section class="services">
-    <h3>Our Services</h3>
-    <ul>
-      <li>Website Development</li>
-      <li>Cybersecurity & Ethical Hacking Support</li>
-      <li>Technical Consultation</li>
-      <li>Online Tutoring (Cyber & Tech)</li>
-    </ul>
-  </section>  <section class="contact">
-    <h3>Contact Us</h3>
-    <p>Phone: 9954350766</p>
-    <p>Email: mukshidulislam063@gmail.com</p>
-  </section>  <footer>
-    <p>&copy; 2025 ASBMI Online Services. All rights reserved.</p>
-  </footer>
+  <h1>Beauty Restaurant</h1>
+  <h5>Tea, Coffee, Milk, Snacks & More...</h5>
+
+  <div class="menu">
+    <h3>Tea</h3>
+    <ol>
+      <li>Black Tea: Rs. 50 <button onclick="openForm('Black Tea')">Order</button></li>
+      <li>White Tea: Rs. 70 <button onclick="openForm('White Tea')">Order</button></li>
+      <li>Normal Tea: Rs. 10 <button onclick="openForm('Normal Tea')">Order</button></li>
+      <li>Super Tea: Rs. 100 <button onclick="openForm('Super Tea')">Order</button></li>
+    </ol>
+  </div>
+
+  <div class="menu">
+    <h3>Coffee</h3>
+    <ol>
+      <li>Black Coffee: Rs. 50 <button onclick="openForm('Black Coffee')">Order</button></li>
+      <li>White Coffee: Rs. 70 <button onclick="openForm('White Coffee')">Order</button></li>
+      <li>Normal Coffee: Rs. 10 <button onclick="openForm('Normal Coffee')">Order</button></li>
+      <li>Super Coffee: Rs. 100 <button onclick="openForm('Super Coffee')">Order</button></li>
+    </ol>
+  </div>
+
+  <div class="menu">
+    <h3>Milk</h3>
+    <ol>
+      <li>Black Milk: Rs. 50 <button onclick="openForm('Black Milk')">Order</button></li>
+      <li>White Milk: Rs. 70 <button onclick="openForm('White Milk')">Order</button></li>
+      <li>Normal Milk: Rs. 10 <button onclick="openForm('Normal Milk')">Order</button></li>
+      <li>Super Milk: Rs. 100 <button onclick="openForm('Super Milk')">Order</button></li>
+    </ol>
+  </div>
+
+  <!-- Booking Form -->
+  <div id="bookingForm">
+    <h3>Booking Form</h3>
+    <p id="selectedItem"></p>
+    <input type="text" id="custName" placeholder="Enter your name" required><br>
+    <input type="tel" id="custPhone" placeholder="Enter your phone number" required><br>
+    <label for="seatNo">Select Seat:</label><br>
+    <select id="seatNo" required>
+      <option value="">--Choose Seat--</option>
+      <option value="1">Seat 1</option>
+      <option value="2">Seat 2</option>
+      <option value="3">Seat 3</option>
+      <option value="4">Seat 4</option>
+      <option value="5">Seat 5</option>
+      <option value="6">Seat 6</option>
+      <option value="7">Seat 7</option>
+      <option value="8">Seat 8</option>
+      <option value="9">Seat 9</option>
+      <option value="10">Seat 10</option>
+    </select><br>
+    <button class="sendBtn" onclick="sendWhatsApp()">Send via WhatsApp</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
