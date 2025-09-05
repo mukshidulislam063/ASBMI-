@@ -3,8 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome To Beauty Restaurant</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Beauty Restaurant</title>
+  <style>
+    body {
+      background-color: powderblue;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      color: orange;
+    }
+    h5 {
+      text-align: center;
+      color: navy;
+    }
+    .menu {
+      margin: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkorange;
+    }
+    #bookingForm {
+      display: none;
+      margin: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    input, select {
+      margin: 6px 0;
+      width: 95%;
+      padding: 8px;
+    }
+    .sendBtn {
+      background-color: green;
+    }
+    .sendBtn:hover {
+      background-color: darkgreen;
+    }
+  </style>
 </head>
 <body>
   <h1>Beauty Restaurant</h1>
@@ -63,6 +115,37 @@
     <button class="sendBtn" onclick="sendWhatsApp()">Send via WhatsApp</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    let currentItem = "";
+    const ownerNumber = "9954350766"; // আপনার WhatsApp নম্বর
+
+    function openForm(item) {
+      currentItem = item;
+      document.getElementById("bookingForm").style.display = "block";
+      document.getElementById("selectedItem").innerText = "Ordering: " + item;
+    }
+
+    function sendWhatsApp() {
+      let name = document.getElementById("custName").value;
+      let phone = document.getElementById("custPhone").value;
+      let seat = document.getElementById("seatNo").value;
+
+      if (name && phone && seat) {
+        let message = `🍽️ New Order from Beauty Restaurant\n\n` +
+                      `Item: ${currentItem}\n` +
+                      `Name: ${name}\n` +
+                      `Customer Phone: ${phone}\n` +
+                      `Seat No: ${seat}\n` +
+                      `✅ Please confirm the booking.`;
+
+        // WhatsApp API URL
+        let url = `https://api.whatsapp.com/send?phone=91${ownerNumber}&text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+      } else {
+        alert("⚠️ Please fill all fields!");
+      }
+    }
+  </script>
 </body>
 </html>
